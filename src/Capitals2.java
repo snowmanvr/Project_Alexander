@@ -13,7 +13,7 @@ import java.awt.FlowLayout;
 
 public class Capitals2 {
 
-	JFrame frame;
+	private JFrame frame;
 	private JTextField textPlayer1;
 	private JTextField textPlayer2;
 
@@ -149,7 +149,7 @@ public class Capitals2 {
 		frame.getContentPane().add(lblHereIsPlayer2Name);
 
 		buttonsAndAnswer(answer1, answer2, answer3, answer4, rightAnswer, firstPlayerPoints, secondPlayerPoinst,
-				whichTurnIsNow, lblHereIsPlayer1Name, lblHereIsPlayer2Name, lblTurn, lblHereIsTheCurrentQuestion);
+				whichTurnIsNow);
 
 		frame.setBackground(Color.LIGHT_GRAY);
 		frame.setTitle("\u0421\u0442\u043E\u043B\u0438\u0446\u0438");
@@ -159,31 +159,22 @@ public class Capitals2 {
 	}
 
 	private void buttonsAndAnswer(String answer1, String answer2, String answer3, String answer4, int rightAnswer,
-			int firstPlayerPoints, int secondPlayerPoinst, int whichTurnIsNow, JLabel lblHereIsPlayer1Name,
-			JLabel lblHereIsPlayer2Name, JLabel lblTurn,JLabel lblHereIsTheCurrentQuestion) {
+			int firstPlayerPoints, int secondPlayerPoinst, int whichTurnIsNow) {
 
 		JButton btnAnswer1 = new JButton(answer1);
 		btnAnswer1.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (rightAnswer == 1) {
-					if (whichTurnIsNow % 2 == 0) {
-						lblHereIsPlayer1Name.hide();
-						lblHereIsPlayer2Name.hide();
-						lblHereIsTheCurrentQuestion.hide();
+					if (whichTurnIsNow % 2 == 0)
 						startTheGame(firstPlayerPoints, secondPlayerPoinst + 1, whichTurnIsNow + 1);
-
-					} else {
-						lblHereIsPlayer1Name.hide();
-						lblHereIsPlayer2Name.hide();
-						lblHereIsTheCurrentQuestion.hide();
+					else
 						startTheGame(firstPlayerPoints + 1, secondPlayerPoinst, whichTurnIsNow + 1);
-					}
 				} else {
-					lblHereIsPlayer1Name.hide();
-					lblHereIsPlayer2Name.hide();
-					lblHereIsTheCurrentQuestion.hide();
-					startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
+					if (whichTurnIsNow % 2 == 0)
+						startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
+					else
+						startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
 
 				}
 
@@ -195,25 +186,16 @@ public class Capitals2 {
 		JButton btnAnswer2 = new JButton(answer2);
 		btnAnswer2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				if (rightAnswer == 2) {
-					if (whichTurnIsNow % 2 == 0) {
-						lblHereIsPlayer1Name.hide();
-						lblHereIsPlayer2Name.hide();
-						lblTurn.hide();
+				if (rightAnswer == 1) {
+					if (whichTurnIsNow % 2 == 0)
 						startTheGame(firstPlayerPoints, secondPlayerPoinst + 1, whichTurnIsNow + 1);
-
-					} else {
-						lblHereIsPlayer1Name.hide();
-						lblHereIsPlayer2Name.hide();
-						lblTurn.hide();
+					else
 						startTheGame(firstPlayerPoints + 1, secondPlayerPoinst, whichTurnIsNow + 1);
-					}
 				} else {
-					lblHereIsPlayer1Name.hide();
-					lblHereIsPlayer2Name.hide();
-					lblTurn.hide();
-					startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
+					if (whichTurnIsNow % 2 == 0)
+						startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
+					else
+						startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
 
 				}
 			}
@@ -225,21 +207,16 @@ public class Capitals2 {
 		JButton btnAnswer3 = new JButton(answer3);
 		btnAnswer3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (rightAnswer == 3) {
-					if (whichTurnIsNow % 2 == 0) {
-						lblHereIsPlayer1Name.hide();
-						lblHereIsPlayer2Name.hide();
+				if (rightAnswer == 1) {
+					if (whichTurnIsNow % 2 == 0)
 						startTheGame(firstPlayerPoints, secondPlayerPoinst + 1, whichTurnIsNow + 1);
-
-					} else {
-						lblHereIsPlayer1Name.hide();
-						lblHereIsPlayer2Name.hide();
+					else
 						startTheGame(firstPlayerPoints + 1, secondPlayerPoinst, whichTurnIsNow + 1);
-					}
 				} else {
-					lblHereIsPlayer1Name.hide();
-					lblHereIsPlayer2Name.hide();
-					startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
+					if (whichTurnIsNow % 2 == 0)
+						startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
+					else
+						startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
 
 				}
 			}
@@ -251,21 +228,16 @@ public class Capitals2 {
 		JButton btnAnswer4 = new JButton(answer4);
 		btnAnswer4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (rightAnswer == 4) {
-					if (whichTurnIsNow % 2 == 0) {
-						lblHereIsPlayer1Name.hide();
-						lblHereIsPlayer2Name.hide();
+				if (rightAnswer == 1) {
+					if (whichTurnIsNow % 2 == 0)
 						startTheGame(firstPlayerPoints, secondPlayerPoinst + 1, whichTurnIsNow + 1);
-
-					} else {
-						lblHereIsPlayer1Name.hide();
-						lblHereIsPlayer2Name.hide();
+					else
 						startTheGame(firstPlayerPoints + 1, secondPlayerPoinst, whichTurnIsNow + 1);
-					}
 				} else {
-					lblHereIsPlayer1Name.hide();
-					lblHereIsPlayer2Name.hide();
-					startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
+					if (whichTurnIsNow % 2 == 0)
+						startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
+					else
+						startTheGame(firstPlayerPoints, secondPlayerPoinst, whichTurnIsNow + 1);
 
 				}
 			}
@@ -273,9 +245,5 @@ public class Capitals2 {
 		btnAnswer4.setBounds(261, 215, 119, 36);
 		frame.getContentPane().add(btnAnswer4);
 
-	}
-	public static void hideButtons()
-	{
-		
 	}
 }
